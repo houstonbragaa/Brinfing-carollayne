@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Briefing — Estratégia de Conteúdo</title>
+    <link rel="stylesheet" href="./index.css">
+  </head>
+  <body>
+    <div class="hero">
+      <p class="hero-tag">Estratégia de Conteúdo</p>
+      <h1>Briefing de <em>Posicionamento</em></h1>
+      <p>
+        Suas respostas são a base de tudo. Responda com calma — não há certo ou
+        errado, apenas o que é autenticamente seu.
+      </p>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <div class="form-wrapper">
+      <form id="briefingForm">
+        <!-- 1. SOBRE VOCÊ -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-num">01</span>
+            <h2 class="section-title">Sobre você</h2>
+          </div>
+
+          <div class="grid-2">
+            <div class="field">
+              <label>Nome completo <span class="req">*</span></label>
+              <input type="text" name="nome" required placeholder="Dra. ..." />
+            </div>
+            <div class="field">
+              <label>E-mail de contato</label>
+              <input type="email" name="email" placeholder="dra@email.com" />
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Cidade / Estado</label>
+            <input type="text" name="cidade" placeholder="São Paulo — SP" />
+          </div>
+
+          <div class="field">
+            <label
+              >Conte sua trajetória e missão como psiquiatra
+              <span class="sub"
+                >Formação, experiência, por que escolheu a área e o que te
+                move.</span
+              >
+            </label>
+            <textarea
+              class="tall"
+              name="trajetoria"
+              placeholder="Escreva aqui..."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- 2. ATENDIMENTO E DIFERENCIAL -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-num">02</span>
+            <h2 class="section-title">Atendimento e diferencial</h2>
+          </div>
+
+          <div class="field">
+            <label>Como funciona seu atendimento?</label>
+            <div class="check-grid">
+              <label class="check-item"
+                ><input type="checkbox" name="atendimento" value="presencial" />
+                Presencial</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="atendimento" value="online" />
+                Online</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="atendimento" value="ambos" />
+                Ambos</label
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label
+              >Quais são seus principais focos? (marque todos que se
+              aplicam)</label
+            >
+            <div class="check-grid">
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="especialidades"
+                  value="ansiedade"
+                />
+                Ansiedade</label
+              >
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="especialidades"
+                  value="depressao"
+                />
+                Depressão</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="especialidades" value="tdah" />
+                TDAH</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="especialidades" value="bipolar" />
+                Transtorno Bipolar</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="especialidades" value="burnout" />
+                Burnout</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="especialidades" value="insonia" />
+                Insônia</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="especialidades" value="toc" />
+                TOC</label
+              >
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="especialidades"
+                  value="alimentares"
+                />
+                Transtornos alimentares</label
+              >
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="especialidades"
+                  value="dependencia"
+                />
+                Dependência química</label
+              >
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="especialidades"
+                  value="personalidade"
+                />
+                Transtornos de personalidade</label
+              >
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="especialidades"
+                  value="saude_feminina"
+                />
+                Saúde mental feminina</label
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label
+              >O que faz seu atendimento ser diferente?
+              <span class="sub"
+                >Por que escolher você, elogios dos pacientes, valores
+                indispensáveis.</span
+              >
+            </label>
+            <textarea
+              class="tall"
+              name="diferencial"
+              placeholder="Escreva aqui..."
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <label
+              >Como você define sua filosofia de atendimento?
+              <span class="sub"
+                >Métodos além da medicação, abordagem e o que nunca faz.</span
+              >
+            </label>
+            <textarea
+              name="filosofia_atendimento"
+              placeholder="Escreva aqui..."
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- 3. PÚBLICO E DORES -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-num">03</span>
+            <h2 class="section-title">Público e dores</h2>
+          </div>
+
+          <div class="field">
+            <label
+              >Quem é seu paciente ideal?
+              <span class="sub">Faixa etária, perfil e características.</span>
+            </label>
+            <input
+              type="text"
+              name="faixa_etaria"
+              placeholder="Ex: Mulheres de 25 a 45 anos"
+            />
+          </div>
+
+          <div class="field">
+            <label
+              >Como seus pacientes costumam chegar até você? (marque todos que
+              se aplicam)</label
+            >
+            <div class="check-grid">
+              <label class="check-item"
+                ><input type="checkbox" name="como_chegam" value="indicacao" />
+                Indicação</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="como_chegam" value="instagram" />
+                Instagram</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="como_chegam" value="google" />
+                Google</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="como_chegam" value="convenio" />
+                Convênio</label
+              >
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="como_chegam"
+                  value="medicos_parceiros"
+                />
+                Médicos parceiros</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="como_chegam" value="tiktok" />
+                TikTok</label
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label
+              >Quais são as maiores dores do seu público?
+              <span class="sub"
+                >Sintomas, motivos de busca e tentativas anteriores.</span
+              >
+            </label>
+            <textarea
+              class="tall"
+              name="dores_publico"
+              placeholder="Escreva aqui..."
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <label
+              >Quais barreiras, medos e objeções seu público enfrenta?
+              <span class="sub">Preconceitos, mitos e desinformação.</span>
+            </label>
+            <textarea name="barreiras" placeholder="Escreva aqui..."></textarea>
+          </div>
+        </div>
+
+        <!-- 4. MARCA E CONTEÚDO -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-num">04</span>
+            <h2 class="section-title">Marca e conteúdo</h2>
+          </div>
+
+          <div class="field">
+            <label
+              >Como você se descreve? (marque todas que se identificar)</label
+            >
+            <div class="tag-grid">
+              <label class="tag"
+                ><input type="checkbox" name="personalidade" value="Técnica" />
+                Técnica</label
+              >
+              <label class="tag"
+                ><input
+                  type="checkbox"
+                  name="personalidade"
+                  value="Humanizada"
+                />
+                Humanizada</label
+              >
+              <label class="tag"
+                ><input
+                  type="checkbox"
+                  name="personalidade"
+                  value="Acolhedora"
+                />
+                Acolhedora</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="personalidade" value="Direta" />
+                Direta</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="personalidade" value="Leve" />
+                Leve</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="personalidade" value="Didática" />
+                Didática</label
+              >
+              <label class="tag"
+                ><input
+                  type="checkbox"
+                  name="personalidade"
+                  value="Científica"
+                />
+                Científica</label
+              >
+              <label class="tag"
+                ><input
+                  type="checkbox"
+                  name="personalidade"
+                  value="Inspiradora"
+                />
+                Inspiradora</label
+              >
+              <label class="tag"
+                ><input
+                  type="checkbox"
+                  name="personalidade"
+                  value="Bem-humorada"
+                />
+                Bem-humorada</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="personalidade" value="Elegante" />
+                Elegante</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="personalidade" value="Moderna" />
+                Moderna</label
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label
+              >Como você quer ser percebida?
+              <span class="sub"
+                >Posicionamento, palavras-chave e identidade do perfil.</span
+              >
+            </label>
+            <textarea
+              name="posicionamento"
+              placeholder="Escreva aqui..."
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <label
+              >O que espera conquistar com as redes sociais? (marque todos que
+              se aplicam)</label
+            >
+            <div class="check-grid">
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="objetivos"
+                  value="mais_pacientes"
+                />
+                Mais pacientes</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="objetivos" value="autoridade" />
+                Fortalecer autoridade</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="objetivos" value="educar" />
+                Educar a população</label
+              >
+              <label class="check-item"
+                ><input
+                  type="checkbox"
+                  name="objetivos"
+                  value="marca_pessoal"
+                />
+                Construir marca pessoal</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="objetivos" value="cursos" />
+                Lançar cursos</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="objetivos" value="mentorias" />
+                Mentorias</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="objetivos" value="palestras" />
+                Palestras</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="objetivos" value="livros" />
+                Escrever livros</label
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Qual tipo de conteúdo você gosta de criar?</label>
+            <div class="tag-grid">
+              <label class="tag"
+                ><input type="checkbox" name="tipo_conteudo" value="Videos" />
+                Vídeos</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="tipo_conteudo" value="Fotos" />
+                Fotos</label
+              >
+              <label class="tag"
+                ><input
+                  type="checkbox"
+                  name="tipo_conteudo"
+                  value="Bastidores"
+                />
+                Bastidores</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="tipo_conteudo" value="Stories" />
+                Stories</label
+              >
+              <label class="tag"
+                ><input
+                  type="checkbox"
+                  name="tipo_conteudo"
+                  value="Carrosseis"
+                />
+                Carrosséis</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="tipo_conteudo" value="Lives" />
+                Lives</label
+              >
+              <label class="tag"
+                ><input type="checkbox" name="tipo_conteudo" value="Podcasts" />
+                Podcasts</label
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. REDES E VISÃO -->
+        <div class="section">
+          <div class="section-header">
+            <span class="section-num">05</span>
+            <h2 class="section-title">Redes e visão</h2>
+          </div>
+
+          <div class="field">
+            <label>Quais redes você utiliza atualmente?</label>
+            <div class="check-grid">
+              <label class="check-item"
+                ><input type="checkbox" name="redes" value="instagram" />
+                Instagram</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="redes" value="tiktok" />
+                TikTok</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="redes" value="youtube" />
+                YouTube</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="redes" value="facebook" />
+                Facebook</label
+              >
+              <label class="check-item"
+                ><input type="checkbox" name="redes" value="linkedin" />
+                LinkedIn</label
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label
+              >O que já funcionou ou não no seu conteúdo?
+              <span class="sub"
+                >Assuntos que ama, evita e referências que admira.</span
+              >
+            </label>
+            <textarea
+              class="tall"
+              name="conteudo_passado"
+              placeholder="Escreva aqui..."
+            ></textarea>
+          </div>
+
+          <div class="field">
+            <label>Você gosta de aparecer nos vídeos?</label>
+            <div
+              class="check-grid"
+              style="grid-template-columns: repeat(3, 1fr)"
+            >
+              <label class="check-item"
+                ><input type="radio" name="aparecer_videos" value="sim" /> Sim,
+                adoro</label
+              >
+              <label class="check-item"
+                ><input
+                  type="radio"
+                  name="aparecer_videos"
+                  value="mais_ou_menos"
+                />
+                Às vezes</label
+              >
+              <label class="check-item"
+                ><input type="radio" name="aparecer_videos" value="nao" />
+                Prefiro não</label
+              >
+            </div>
+          </div>
+
+          <div class="field">
+            <label
+              >Mensagem final e visão de futuro
+              <span class="sub"
+                >O que deseja nos próximos anos e a mensagem para quem
+                sofre.</span
+              >
+            </label>
+            <textarea
+              class="tall"
+              name="mensagem_final"
+              placeholder="Escreva com o coração..."
+            ></textarea>
+          </div>
+        </div>
+
+        <div class="submit-area">
+          <p>
+            Revise suas respostas antes de enviar. Você pode voltar e editar a
+            qualquer momento.
+          </p>
+          <button type="submit">Enviar briefing</button>
+        </div>
+      </form>
+
+      <div class="thankyou" id="thankyou">
+        <h2>Muito obrigada. ✦</h2>
+        <p>
+          Recebi seu briefing. Em breve entro em contato para começarmos a
+          construir o seu posicionamento.
+        </p>
+      </div>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
