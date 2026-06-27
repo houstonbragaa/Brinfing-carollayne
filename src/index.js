@@ -1,3 +1,5 @@
+
+
 // Progress bar
 const form = document.getElementById("briefingForm");
 const fill = document.getElementById("progressFill");
