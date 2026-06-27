@@ -8,6 +8,12 @@
   padding: 0;
 }
 
+html {
+  /* Trava qualquer vazamento horizontal na raiz do documento */
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 :root {
   --blush: #e8d5cc;
   --sage: #9bada0;
@@ -24,14 +30,18 @@ body {
   color: var(--ink);
   font-size: 15px;
   line-height: 1.6;
+  max-width: 100%;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 /* HEADER */
 .hero {
   background: var(--ink);
   color: var(--warm-white);
-  padding: 64px 40px 56px;
+  padding: 64px 24px 56px;
   text-align: center;
+  width: 100%;
 }
 
 .hero-tag {
@@ -46,12 +56,13 @@ body {
 
 .hero h1 {
   font-family: "Cormorant Garamond", serif;
-  font-size: clamp(36px, 6vw, 58px);
+  font-size: clamp(32px, 8vw, 58px);
   font-weight: 300;
   line-height: 1.15;
   color: var(--warm-white);
   max-width: 600px;
   margin: 0 auto 18px;
+  word-wrap: break-word;
 }
 
 .hero h1 em {
@@ -74,6 +85,7 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
+  width: 100%;
 }
 
 .progress-fill {
@@ -85,9 +97,10 @@ body {
 
 /* LAYOUT */
 .form-wrapper {
+  width: 100%;
   max-width: 720px;
   margin: 0 auto;
-  padding: 60px 24px 100px;
+  padding: 60px clamp(16px, 5vw, 24px) 100px;
 }
 
 /* SECTIONS */
@@ -110,11 +123,12 @@ body {
   font-style: italic;
   color: var(--sage);
   min-width: 28px;
+  flex-shrink: 0;
 }
 
 .section-title {
   font-family: "Cormorant Garamond", serif;
-  font-size: 26px;
+  font-size: clamp(22px, 5vw, 26px);
   font-weight: 400;
   color: var(--ink);
 }
@@ -122,6 +136,7 @@ body {
 /* FIELDS */
 .field {
   margin-bottom: 28px;
+  width: 100%;
 }
 
 label {
@@ -148,6 +163,7 @@ input[type="tel"],
 select,
 textarea {
   width: 100%;
+  max-width: 100%;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -172,6 +188,7 @@ textarea:focus {
 textarea {
   resize: vertical;
   min-height: 100px;
+  width: 100%;
 }
 
 textarea.tall {
@@ -183,9 +200,10 @@ textarea.tall {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+  width: 100%;
 }
 
-@media (max-width: 500px) {
+@media (max-width: 560px) {
   .grid-2 {
     grid-template-columns: 1fr;
   }
@@ -194,9 +212,16 @@ textarea.tall {
 /* CHECKBOXES */
 .check-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(200px, 100%), 1fr));
   gap: 10px;
   margin-top: 4px;
+  width: 100%;
+}
+
+@media (max-width: 480px) {
+  .check-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .check-item {
@@ -212,6 +237,12 @@ textarea.tall {
     border-color 0.15s,
     background 0.15s;
   font-size: 13.5px;
+  min-width: 0;
+}
+
+.check-item span,
+.check-item {
+  word-break: break-word;
 }
 
 .check-item:has(input:checked) {
@@ -234,6 +265,7 @@ textarea.tall {
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 4px;
+  width: 100%;
 }
 
 .tag {
@@ -247,6 +279,7 @@ textarea.tall {
   font-size: 13px;
   cursor: pointer;
   transition: all 0.15s;
+  max-width: 100%;
 }
 
 .tag:has(input:checked) {
@@ -271,6 +304,7 @@ textarea.tall {
 .submit-area {
   text-align: center;
   padding-top: 16px;
+  width: 100%;
 }
 
 .submit-area p {
@@ -285,7 +319,7 @@ button[type="submit"] {
   color: var(--warm-white);
   border: none;
   border-radius: 6px;
-  padding: 16px 48px;
+  padding: 16px clamp(28px, 8vw, 48px);
   font-family: "DM Sans", sans-serif;
   font-size: 14px;
   font-weight: 500;
@@ -294,6 +328,8 @@ button[type="submit"] {
   transition:
     background 0.2s,
     transform 0.1s;
+  width: auto;
+  max-width: 100%;
 }
 
 button[type="submit"]:hover {
@@ -309,11 +345,13 @@ button[type="submit"]:active {
   display: none;
   text-align: center;
   padding: 80px 24px;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .thankyou h2 {
   font-family: "Cormorant Garamond", serif;
-  font-size: 38px;
+  font-size: clamp(28px, 6vw, 38px);
   font-weight: 300;
   margin-bottom: 16px;
 }
@@ -326,4 +364,32 @@ button[type="submit"]:active {
 /* REQUIRED MARK */
 .req {
   color: var(--sage);
+}
+
+/* RESPONSIVE FINE-TUNING */
+@media (max-width: 600px) {
+  .hero {
+    padding: 48px 20px 40px;
+  }
+
+  .form-wrapper {
+    padding-top: 44px;
+    padding-bottom: 72px;
+  }
+
+  .section {
+    margin-bottom: 48px;
+  }
+}
+
+@media (max-width: 380px) {
+  .check-item,
+  .tag {
+    font-size: 13px;
+    padding: 9px 12px;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+  }
 }
